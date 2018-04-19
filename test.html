@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		color: black;
+		font-family: 'Oswald', sans-serif;
+    }
+	html{		
+		height: 100%;
+		width: 100%;
+	}
+	body{
+		width: 100%;
+	}
+</style>
+<body>
+<script type="text/javascript">
+var d=document, rez=0,        
+    vsego=5,         
+    count=0;
+
+
+function timer(){
+var obj=document.getElementById('timer_inp');
+obj.innerHTML--;
+    if (obj.innerHTML==0){
+        answ();
+        setTimeout(function(){},1000);
+    } else {
+        setTimeout(timer,1000);
+    }
+}
+setTimeout(timer,1000);
+
+function answ(){
+	for(i=0; i<d.getElementsByName("q1").length; i++){
+    
+    if(d.getElementsByName("q1")[i].checked) {
+      
+      if(i==2){rez+=2; count++;}      
+    }}
+
+    for(i=0; i<d.getElementsByName("q2").length; i++){
+    
+    if(d.getElementsByName("q2")[i].checked) {
+      
+      if(i==2){rez+=2; count++;}      
+    }}
+
+    for(i=0; i<d.getElementsByName("q3").length; i++){
+    
+    if(d.getElementsByName("q3")[i].checked) {
+      
+      if(i==0){rez+=2; count++;}      
+    }}
+
+    for(i=0; i<d.getElementsByName("q4").length; i++){
+    
+    if(d.getElementsByName("q4")[i].checked) {
+      
+      if(i==1){rez+=2; count++;}      
+    }}
+
+    for(i=0; i<d.getElementsByName("q5").length; i++){
+    
+    if(d.getElementsByName("q5")[i].checked) {
+      
+      if(i==0){rez+=2; count++;}      
+    }}
+
+    alert("Вы ответили правильно на "+count+" вопросов из 5.");
+    document.location.replace("index.html");
+}
+</script>
+<div><b>ОСТАЛОСЬ: <span id="timer_inp">30</span> сек.</b></div>
+<div id="q1" style="padding: 1%;">
+<p id="q">1. В каком году произошла Курская битва?</p><br/>
+<input type="radio" name="q1" value="1" />1942<br/>
+<input type="radio" name="q1" value="2" />1941<br/>
+<input type="radio" name="q1" value="3" />1943<br/>
+</div>
+<div id="q2" style="padding: 1%;">
+<p id="q">2. В Курской битве использовалось рекордное количество единиц техники в истории. Какой техники использовалось больше всего?</p><br/>
+<input type="radio" name="q2" value="1" />Самолёты<br/>
+<input type="radio" name="q2" value="2" />Артиллерия<br/>
+<input type="radio" name="q2" value="3" />Танки<br/>
+</div>
+<div id="q3" style="padding: 1%;">
+<p id="q">3. Сколько дней продолжалась битва?</p><br/>
+<input type="radio" name="q3" value="1" />49<br/>
+<input type="radio" name="q3" value="2" />114<br/>
+<input type="radio" name="q3" value="3" />3<br/>
+</div>
+<div id="q4" style="padding: 1%;">
+<p id="q">4. К кому перешла инициатива после Курской битвы?</p><br/>
+<input type="radio" name="q4" value="1" />Германия<br/>
+<input type="radio" name="q4" value="2" />СССР<br/>
+<input type="radio" name="q4" value="3" />США<br/>
+</div>
+<div id="q5" style="padding: 1%;">
+<p id="q">5. Кто был одним из главнокомандующих советской армии?</p><br/>
+<input type="radio" name="q5" value="1" />Жуков<br/>
+<input type="radio" name="q5" value="2" />Петров<br/>
+<input type="radio" name="q5" value="3" />Покрышкин<br/>
+</div>
+<input type="button" value="ПРОВЕРИТЬ" name="ok" onclick="answ()" style="margin:1%;"/><br>
+</body>
+</html>
